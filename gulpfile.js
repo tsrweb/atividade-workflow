@@ -4,7 +4,7 @@ var htmlmin = require('gulp-html-minifier2');
 var notify 	= require("gulp-notify");
  
 gulp.task("sass", gulp.series( function(){
-	return gulp.src(['./source/sass/*.sass','./source/scss/*.scss'])
+	return gulp.src(['./source/sass/**/*.sass','./source/scss/**/*.scss'])
 				.pipe(sass())
 				.on("error", notify.onError({title:"erro ao compilar", message:"<%= error.message %>"}))
 				.pipe(gulp.dest("./dist/css"))
@@ -17,7 +17,7 @@ gulp.task('minifyhtml', gulp.series( function() {
 }));
 
 gulp.task('sass:watch', gulp.series( function () {
-  gulp.watch(['./source/scss/*.scss','./source/sass/*.sass'], gulp.parallel(['sass']));
+  gulp.watch(['./source/scss/**/*.scss','./source/sass/**/*.sass'], gulp.parallel(['sass']));
 }));
 
 gulp.task('minifyhtml:watch', gulp.series( function () {
