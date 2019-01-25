@@ -1,3 +1,4 @@
+@import "../variaveis.scss";
 @mixin tema($background,$cor,$borda){
 	background-color: $background;
 	color: $cor;
@@ -7,19 +8,16 @@
 ul{
 	float:right;
 	margin-right: 30px;
-}
 
-nav ul li{
-	float: left;
-	list-style-type: none;
-}
+	li{
+		float: left;
+		list-style-type: none;
+	
+	a{
+		display: block;
+		text-decoration: none;
+		padding: 10px;
 
-nav ul li a{
-	display: block;
-	text-decoration: none;
-	padding: 10px;
-}
-
-nav ul li a:hover{
-	@include tema($background3,$cor2,$borda1);
-}
+	&:hover{
+		@include tema($background1,$cor2,$borda2);
+	}}}}
